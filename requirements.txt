@@ -1,0 +1,7 @@
+pandas
+tqdm
+python-dotenv
+openai
+asyncio
+tavily-python
+linkup

@@ -1,0 +1,13 @@
+{
+  "is_correct": 0.7,
+  "is_incorrect": 0.2,
+  "is_not_attempted": 0.1,
+  "is_given_attempted": 0.8999999999999999,
+  "accuracy_given_attempted": 0.7777777777777778,
+  "f_score": 0.7368421052631577,
+  "avg_latency": 5.369702551099989,
+  "total_samples": 10,
+  "correct_count": 7,
+  "incorrect_count": 2,
+  "not_attempted_count": 1
+}

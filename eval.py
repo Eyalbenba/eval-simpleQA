@@ -73,16 +73,22 @@ async def run_linkup_standard_policy(question: str) -> Tuple[str, None]:
         )
         return result, None
     
-async def run_tavily_policy(question: str) -> Tuple[str, None]:
-    """Run tavily policy in a thread to avoid blocking."""
+async def run_tavily_policy(question: str, search_depth: str = "advanced", include_answer: bool = True) -> Tuple[str, None]:
+    """Run tavily policy in a thread to avoid blocking.
+    
+    Args:
+        question: The question to search for
+        search_depth: The search depth to use ("advanced" or "basic")
+        include_answer: Whether to include an answer in the response
+    """
     loop = asyncio.get_event_loop()
     with ThreadPoolExecutor() as pool:
         result = await loop.run_in_executor(
             pool, 
             lambda: TavilyClient(api_key=tavily_api_key).search(
                 question, 
-                search_depth="advanced", 
-                include_answer=True
+                search_depth=search_depth, 
+                include_answer=include_answer
             )['answer']
         )
         return result, None
@@ -90,7 +96,8 @@ async def run_tavily_policy(question: str) -> Tuple[str, None]:
 async def run_policy_async(question: str, policy_type: str = "linkup") -> Tuple[str, Optional[Any]]:
     """Async version of run_policy."""
     policy_handlers = {
-        "tavily": run_tavily_policy,
+        "tavily_advanced": lambda q: run_tavily_policy(q, search_depth="advanced", include_answer=True),
+        "tavily_basic": lambda q: run_tavily_policy(q, search_depth="basic", include_answer=True),
         "linkup": run_linkup_policy,
         "linkup_standard": run_linkup_standard_policy,
     }

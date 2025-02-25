@@ -11,3 +11,5 @@ ENV/
 htmlcov/
 *.log
 .DS_Store
+.results
+.idea
