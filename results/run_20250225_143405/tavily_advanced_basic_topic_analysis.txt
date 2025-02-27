@@ -1,8 +1,0 @@
-
-Performance Analysis by Topic
-==============================
-Category                 Count   F-score   Accuracy  Correct   Incorrect Not Attempted  Avg Latency 
-----------------------------------------------------------------------------------------------------
-Science and technology          11.000     1.000     1.000     0.000     0.000          2.16s      
-----------------------------------------------------------------------------------------------------
-Total samples: 1

@@ -1,7 +1,9 @@
-pandas
 tqdm
 python-dotenv
 openai
 asyncio
 tavily-python
-linkup
+flask
+langsmith
+langchain_openai
+aiohttp
