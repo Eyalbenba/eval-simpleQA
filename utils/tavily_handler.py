@@ -31,6 +31,7 @@ class TavilyHandler:
 
         # Store default search parameters
         self.search_params = search_params or {}
+        self.decompose_query = False
 
     async def search(
         self,
