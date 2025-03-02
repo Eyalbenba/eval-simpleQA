@@ -28,7 +28,7 @@ class Environment(str, Enum):
     STAGING = "staging"
 
 class SampleSize(str, Enum):
-    TEST = "test"
+    TEST = "one_test"
     BASE = "reg"
     FULL = "base"
 
